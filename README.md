@@ -4,6 +4,8 @@ A feature-rich **Spotify Clone** designed to deliver a seamless music streaming 
 
 [**Explore the Docs »**](https://github.com/[Amazeabhi]/[harmony-hub]) | [**View Demo »**](https://your-demo-link.vercel.app)
 
+![App Screenshot](Screenshot%202026-01-02%20194759.png)
+
 ---
 
 ## 🧐 Overview
