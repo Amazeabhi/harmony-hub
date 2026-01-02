@@ -2,7 +2,7 @@
 
 A feature-rich **Spotify Clone** designed to deliver a seamless music streaming experience. This project mimics the core functionality of Spotify, including audio playback, song uploads, and a fully responsive UI.
 
-[**Explore the Docs »**](https://github.com/[Amazeabhi]/[harmony-hub]) | [**View Demo »**](https://your-demo-link.vercel.app)
+[![Launch App](https://img.shields.io/badge/Launch%20App-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://spotify-cloness.lovable.app)
 
 ![App Screenshot](Screenshot%202026-01-02%20194759.png)
 
