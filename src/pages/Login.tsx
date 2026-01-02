@@ -8,7 +8,6 @@ import { toast } from 'sonner';
 const Login = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const redirectUri = `${window.location.origin}/callback`;
 
   useEffect(() => {
     if (isAuthenticated()) {
@@ -48,34 +47,6 @@ const Login = () => {
         >
           {isLoading ? 'Connecting...' : 'Log in with Spotify'}
         </Button>
-
-        {/* Important Notice */}
-        <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-4 text-left">
-          <p className="text-sm text-destructive font-medium mb-2">⚠️ Important: Open in new tab</p>
-          <p className="text-xs text-muted-foreground">
-            Click the <strong>↗ external link icon</strong> at the top-right of the preview to open in a new browser tab. OAuth won't work inside the iframe.
-          </p>
-        </div>
-
-        {/* Redirect URI Info */}
-        <div className="bg-card/50 rounded-lg p-4 text-left space-y-3">
-          <h2 className="font-semibold text-foreground">Redirect URI for Spotify Dashboard:</h2>
-          <code className="block bg-accent p-3 rounded text-xs break-all text-primary">
-            {redirectUri}
-          </code>
-          <p className="text-xs text-muted-foreground">
-            Make sure this exact URI is added in your{' '}
-            <a 
-              href="https://developer.spotify.com/dashboard" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-primary hover:underline"
-            >
-              Spotify Developer Dashboard
-            </a>
-            {' '}→ Your App → Settings → Redirect URIs
-          </p>
-        </div>
 
         <p className="text-xs text-muted-foreground">
           This is a demo application. You need a Spotify account to use it.
