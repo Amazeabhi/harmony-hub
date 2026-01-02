@@ -69,7 +69,20 @@ export const useUserPlaylists = () => {
 export const useFeaturedPlaylists = () => {
   return useQuery({
     queryKey: ['featuredPlaylists'],
-    queryFn: () => spotifyApi('/browse/featured-playlists?limit=20') as Promise<{ playlists: { items: SpotifyPlaylist[] } }>,
+    queryFn: async () => {
+      // Featured playlists endpoint is deprecated, use categories instead
+      try {
+        const categories = await spotifyApi('/browse/categories?limit=6');
+        if (categories?.categories?.items?.length > 0) {
+          const categoryId = categories.categories.items[0].id;
+          const categoryPlaylists = await spotifyApi(`/browse/categories/${categoryId}/playlists?limit=20`);
+          return categoryPlaylists;
+        }
+        return { playlists: { items: [] } };
+      } catch {
+        return { playlists: { items: [] } };
+      }
+    },
     enabled: isAuthenticated(),
     staleTime: 5 * 60 * 1000,
   });
